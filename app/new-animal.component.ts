@@ -64,8 +64,12 @@ export class NewAnimalComponent {
     likes: string,
     dislikes: string,
     timestamp = new Date()) {
-      let newAnimal: Animal = new Animal(species, name, age, diet, location, caretakers, gender, likes, dislikes, timestamp);
-      this.newAnimalSender.emit(newAnimal);
+      if (name === "" || species === ""){
+        alert('Name and Species are required fields');
+      } else {
+        let newAnimal: Animal = new Animal(species, name, age, diet, location, caretakers, gender, likes, dislikes, timestamp);
+        this.newAnimalSender.emit(newAnimal);
+      }
   }
 
   newAnimalFormHide() {
