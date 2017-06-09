@@ -44,7 +44,7 @@ export class AppComponent {
   }
 
   masterAnimalList: Animal[] = [
-    new Animal('Northwest Squirrel', 'Juniper', 2, 'Tree Nuts', 'Forest Exhibit', 1, 'Female', 'Things to climb on', 'being pet'),
-    new Animal('Giraffe', 'Hot Rod', 6, 'Leaves', 'Savanna', 4, 'Male', 'Enough room to stretch', 'Neck jokes')
+    new Animal('Northwest Squirrel', 'Juniper', 2, 'Tree Nuts', 'Forest Exhibit', 1, 'Female', 'Things to climb on', 'being pet', "Fri Jun 01 2015 14:35:50 GMT-0700 (PDT)"),
+    new Animal('Giraffe', 'Hot Rod', 6, 'Leaves', 'Savanna', 4, 'Male', 'Enough room to stretch', 'Neck jokes', "Fri Jun 09 2013 09:35:50 GMT-0700 (PDT)")
   ];
 }
