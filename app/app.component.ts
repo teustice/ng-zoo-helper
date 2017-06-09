@@ -7,20 +7,32 @@ import { Animal } from './animal.model';
     <div class="container">
       <h1>Zoo Helper</h1>
 
-      <animal-list [childAnimalList]="masterAnimalList"></animal-list>
+      <list-animal [childAnimalList]="masterAnimalList" (selectedAnimal)="animalToEdit($event)"></list-animal>
+
 
       <button (click)="showNewAnimalForm()" class="btn btn-sm btn-default">Register Animal</button>
       <new-animal *ngIf="newAnimalForm" (newAnimalSender)="newAnimal($event)" (AnimalFormHide)="hideNewAnimalForm()"></new-animal>
+      
+      <edit-animal [animal]="selectedAnimal" (editSender)="finishedEditing()"></edit-animal>
     </div>
   `
 })
 
 export class AppComponent {
   newAnimalForm: boolean = false;
+  selectedAnimal = null;
 
   newAnimal(animal) {
     this.newAnimalForm = false;
     this.masterAnimalList.push(animal);
+  }
+
+  animalToEdit(animal) {
+    this.selectedAnimal = animal;
+  }
+
+  finishedEditing() {
+    this.selectedAnimal = null;
   }
 
   showNewAnimalForm() {
