@@ -7,15 +7,9 @@ import { Animal } from './animal.model';
     <div class="container">
       <h1>Zoo Helper</h1>
 
-      <h3>Current Animals</h3>
-      <ul>
-        <li *ngFor="let animal of masterAnimalList">
-          {{animal.species}} | {{animal.name}} | {{animal.age}} | {{animal.sex}}
-        </li>
-      </ul>
+      <animal-list [childAnimalList]="masterAnimalList"></animal-list>
 
       <button (click)="showNewAnimalForm()" class="btn btn-sm btn-default">Register Animal</button>
-
       <new-animal *ngIf="newAnimalForm" (newAnimalSender)="newAnimal($event)" (AnimalFormHide)="hideNewAnimalForm()"></new-animal>
     </div>
   `
