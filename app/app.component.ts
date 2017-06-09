@@ -4,16 +4,24 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'app-root',
   template: `
+  <div class="jumbotron">
     <div class="container">
       <h1>Zoo Helper</h1>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <list-animal [childAnimalList]="masterAnimalList" (selectedAnimal)="animalToEdit($event)"></list-animal>
+        </div>
+        <div class="col-md-4 detail-container">
+          <button (click)="showNewAnimalForm()" class="btn btn-sm btn-default">Register Animal</button>
+          <new-animal *ngIf="newAnimalForm" (newAnimalSender)="newAnimal($event)" (animalFormHide)="hideNewAnimalForm()"></new-animal>
 
-      <list-animal [childAnimalList]="masterAnimalList" (selectedAnimal)="animalToEdit($event)"></list-animal>
+          <edit-animal [animal]="selectedAnimal" (editSender)="finishedEditing()"></edit-animal>
+        </div>
+      </div>
 
-
-      <button (click)="showNewAnimalForm()" class="btn btn-sm btn-default">Register Animal</button>
-      <new-animal *ngIf="newAnimalForm" (newAnimalSender)="newAnimal($event)" (AnimalFormHide)="hideNewAnimalForm()"></new-animal>
-      
-      <edit-animal [animal]="selectedAnimal" (editSender)="finishedEditing()"></edit-animal>
     </div>
   `
 })
@@ -40,6 +48,7 @@ export class AppComponent {
   }
 
   hideNewAnimalForm() {
+    console.log('hiding the form');
     this.newAnimalForm = false;
   }
 
