@@ -60,6 +60,7 @@ export class AppComponent {
 
   masterAnimalList: Animal[] = [
     new Animal('Northwest Squirrel', 'Juniper', 2, 'Tree Nuts', 'Forest Exhibit', 1, 'Female', 'Things to climb on', 'being pet', "http://illianawildlifeservices.com/wp-content/uploads/2015/07/15066705302_2c0188a681_c.jpg", "Fri Jun 01 2015 14:35:50 GMT-0700 (PDT)"),
-    new Animal('Giraffe', 'Hot Rod', 6, 'Leaves', 'Savanna', 4, 'Male', 'Enough room to stretch', 'Neck jokes',"http://www.longislandgamefarm.com/images/inpage/giraffe.jpg", "Fri Jun 09 2013 09:35:50 GMT-0700 (PDT)")
+    new Animal('Giraffe', 'Hot Rod', 6, 'Leaves', 'Savanna', 4, 'Male', 'Enough room to stretch', 'Neck jokes',"http://www.longislandgamefarm.com/images/inpage/giraffe.jpg", "Fri Jun 09 2013 09:35:50 GMT-0700 (PDT)"),
+    new Animal('Tiger', 'Tony', 5, 'People', 'Savanna', 400, 'Male', 'Cereal in the morning', 'stripe jokes',"https://nextshark.com/wp-content/uploads/2017/02/tiger5.jpg", "Mon Apr 10 2013 09:35:50 GMT-0700 (PDT)"),
   ];
 }

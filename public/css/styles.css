@@ -10,6 +10,7 @@ ul {
 }
 
 .animal-tiles {
+  background-color: rgba(200, 200, 200, 0.5);
   vertical-align: top;
   margin: 0 10px 10px 0;
   width: 30%;
