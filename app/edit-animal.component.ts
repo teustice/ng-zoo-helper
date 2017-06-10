@@ -5,6 +5,7 @@ import { Animal } from './animal.model';
   selector: 'edit-animal',
   template: `
     <div *ngIf="animal">
+    <hr>
       <h1>Edit {{animal.name}}, the {{animal.species}}</h1>
       <div>
         <label>Edit Animal Name:</label>

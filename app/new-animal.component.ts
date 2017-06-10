@@ -24,6 +24,8 @@ import { Animal } from './animal.model';
       <input type="text" class="form-control" #newLikes>
       <label>Dislikes:</label>
       <input type="text" class="form-control" #newDislikes>
+      <label>Image URL:</label>
+      <input type="text" class="form-control" #newImage>
       <br>
       <button class="btn btn-sm btn-default" (click)="submitForm(
         newSpecies.value,
@@ -34,7 +36,8 @@ import { Animal } from './animal.model';
         newCaretakers.value,
         newGender.value,
         newLikes.value,
-        newDislikes.value);
+        newDislikes.value,
+        newImage.value);
         newSpecies.value='';
         newName.value='';
         newAge.value='';
@@ -43,6 +46,7 @@ import { Animal } from './animal.model';
         newGender.value='';
         newLikes.value='';
         newDislikes.value='';
+        newImage.value='';
         newLocation.value='';">Submit</button>
         <button class="btn btn-sm btn-default" (click)="newAnimalFormHide()">Hide</button>
     </div>
@@ -63,11 +67,12 @@ export class NewAnimalComponent {
     gender: string,
     likes: string,
     dislikes: string,
+    image: string,
     timestamp = new Date()) {
       if (name === "" || species === ""){
         alert('Name and Species are required fields');
       } else {
-        let newAnimal: Animal = new Animal(species, name, age, diet, location, caretakers, gender, likes, dislikes, timestamp);
+        let newAnimal: Animal = new Animal(species, name, age, diet, location, caretakers, gender, likes, dislikes, image, timestamp);
         this.newAnimalSender.emit(newAnimal);
       }
   }

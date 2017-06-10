@@ -11,7 +11,10 @@ import { Animal } from './animal.model';
       <option value="overTwo" >Mature Animals</option>
     </select>
     <ul>
-      <li class="animal-tiles" *ngFor="let animal of childAnimalList | age:filterByAge">
+      <li (click)="editButton(animal)" class="animal-tiles" *ngFor="let animal of childAnimalList | age:filterByAge" [ngStyle]="{
+        'background-image': 'url(' + animal.image + ')',
+        'background-repeat': 'no-repeat',
+        'background-size': 'cover' }">
         <tile-animal [animal]="animal" (animalToSend)="editButton($event)"></tile-animal>
       </li>
     </ul>
